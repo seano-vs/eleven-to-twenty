@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleven-To-Twenty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>I'm bad at ASL and worse at coding</h1>
+
+    <div id="settings-area">
+        <h2>What's the vibe?</h2>
+
+        <fieldset>
+            <legend>Select Card Sets:</legend>
+            <div id="card-set-selection">
+                <p>Loading card sets...</p>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Start With:</legend>
+            <label>
+                <input type="radio" name="startSide" value="text" checked> Text First
+            </label>
+            <label>
+                <input type="radio" name="startSide" value="video"> Video First
+            </label>
+        </fieldset>
+
+        <button id="start-button">Start Practice</button>
+    </div>
+
+    <div id="practice-area" class="hidden">
+        <p id="card-counter">Card x of y</p>
+
+        <div id="flashcard-container">
+            <div id="flashcard">
+                <div class="card-face card-front">
+                    <p id="card-text">Text Side</p>
+                </div>
+                <div class="card-face card-back">
+                    <video id="card-video" controls preload="metadata" width="300">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <button id="prev-button">Previous</button>
+            <button id="flip-button">Flip</button>
+            <button id="next-button">Next</button>
+        </div>
+        <button id="stop-button">Back to Settings</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

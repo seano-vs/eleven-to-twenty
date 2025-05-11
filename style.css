@@ -1,0 +1,129 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#settings-area, #practice-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    width: 90%;
+    max-width: 90%;
+    text-align: center;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#card-set-selection label {
+    display: block; /* Make each checkbox appear on a new line */
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#stop-button {
+    background-color: #dc3545;
+}
+#stop-button:hover {
+    background-color: #c82333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Flashcard Styles */
+#flashcard-container {
+    perspective: 1000px; /* Allows 3D flipping */
+    width: 90%; /* Match video width or desired card width */
+    height: 400px; /* Adjust as needed */
+    margin: 20px auto;
+    cursor: pointer; /* Indicate it's clickable for flipping */
+}
+
+#flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+#flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when facing away */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eee;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    overflow: hidden; /* Prevent content spilling */
+}
+
+.card-front {
+    /* Front side is default */
+    z-index: 2; /* Ensures front is initially visible if overlapping */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Pre-rotates the back */
+    background-color: #e0e0e0;
+}
+
+#card-text {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#card-video {
+    max-width: 100%; /* Ensure video fits within the card */
+    max-height: 100%;
+    display: block; /* Remove extra space below video */
+}
+
+#controls {
+    margin-top: 15px;
+}
+
+#card-counter {
+    font-style: italic;
+    color: #555;
+}
